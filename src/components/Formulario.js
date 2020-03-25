@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 
 class Formulario extends Component {
 
@@ -15,7 +17,7 @@ class Formulario extends Component {
             nombreGasto: this.nombreGastoRef.current.value,
             cantidadGasto: this.cantidadGastoRef.current.value
         }
-        console.log(gasto)
+        //console.log(gasto)
 
         //Agregarlo y enviarlo por props
         this.props.agregarGasto(gasto);
@@ -43,6 +45,10 @@ class Formulario extends Component {
             </form>
         )
     }
+}
+
+Formulario.propTypes = {
+    agregarGasto: PropTypes.func.isRequired
 }
 
 export default Formulario;
